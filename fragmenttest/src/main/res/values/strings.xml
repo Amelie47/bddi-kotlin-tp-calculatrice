@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">fragmentTest</string>
+    <string name="popup_message">Nous avons besoin de la permission afin de déterminer votre position gps</string>
+
 </resources>

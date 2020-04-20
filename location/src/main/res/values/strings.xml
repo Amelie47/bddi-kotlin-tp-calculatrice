@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Location</string>
+    <string name="popup_message">Nous avons besoin de la permission afin de déterminer votre position GPS</string>
+</resources>
