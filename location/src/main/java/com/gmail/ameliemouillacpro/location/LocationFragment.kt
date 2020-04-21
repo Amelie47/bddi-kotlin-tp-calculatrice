@@ -33,6 +33,7 @@ class LocationFragment: Fragment() {
 
     lateinit var text_info:TextView
     private var locationManager : LocationManager? = null
+    val requestCodePermission = 0
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -63,7 +64,7 @@ class LocationFragment: Fragment() {
                     ActivityCompat.requestPermissions(
                         activity as Activity,
                         arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
-                        0
+                        requestCodePermission
                     )
                 }
             } else {
@@ -82,7 +83,7 @@ class LocationFragment: Fragment() {
         grantResults: IntArray
     ) {
         when(requestCode) {
-            0 -> {
+            requestCodePermission -> {
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED))  {
                     // Permission accordée
                     text_info.text = "La permission a été accordée : on peut voir la position."

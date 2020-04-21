@@ -25,7 +25,19 @@ class ComputationFragment: Fragment(), Parcelable {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.second_fragment,container,false)
+       return inflater.inflate(R.layout.second_fragment,container,false)
+    }
+
+    @SuppressLint("SetTextI18n")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val nb1 = view.findViewById<EditText>(R.id.firstnb)
+        val nb2 = view.findViewById<EditText>(R.id.secondnb)
+        view.findViewById<Button>(R.id.btnresult).setOnClickListener {
+            text_result.text = "Voici le résultat : ${nb1.text} ${arguments?.getString(ARGS_OPERATION)} ${nb2.text}"
+        }
+
     }
 
     companion object {
@@ -49,14 +61,4 @@ class ComputationFragment: Fragment(), Parcelable {
         super.onViewStateRestored(savedInstanceState)
         var myClass = savedInstanceState.getParcelable("hop")
     }**/
-
-    @SuppressLint("SetTextI18n")
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val nb1 = view.findViewById<EditText>(R.id.first_nb)
-        val nb2 = view.findViewById<EditText>(R.id.second_nb)
-        view.findViewById<Button>(R.id.btnresult).setOnClickListener {
-            text_result.text = "Voici le résultat : ${nb1.text} ${arguments?.getString(ARGS_OPERATION)} ${nb2.text}"
-        }
-    }
 }
