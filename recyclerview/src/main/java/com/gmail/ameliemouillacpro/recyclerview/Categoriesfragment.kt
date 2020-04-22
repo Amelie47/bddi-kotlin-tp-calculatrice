@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gmail.ameliemouillacpro.recyclerview.adapters.CategorieAdapter
@@ -51,8 +52,6 @@ class Categoriesfragment: Fragment() {
         recycler_view.layoutManager = LinearLayoutManager(context)
         recycler_view.adapter = adapterRecycler
     }
-
-
 }
 
 
